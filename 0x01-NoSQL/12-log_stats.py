@@ -22,7 +22,7 @@ def print_nginx_request_logs(nginx_collection):
 def run():
     '''Provides some stats about Nginx logs stored in MongoDB.
     '''
-    client = MongoClient('mongodb://127.0.0.1:27017')
+    client = MongoClient('mongodb://127.0.0.1:27017/my_db?compressors=disabled&gssapiServiceName=mongodb')
     print_nginx_request_logs(client.logs.nginx)
 
 
