@@ -3,4 +3,9 @@
 
 
 def list_all(mongo_collection):
-    return [list_doc for list_doc in mongo_collection.find()]
+    list_docs = mongo_collection.find()
+
+    if list_docs.count() == 0:
+        return []
+
+    return list_docs
